@@ -1,0 +1,8 @@
+name: Sandbox  # Name of the Catalog Entry
+description: Web Rstudio IDE
+  # Description of the Catalog Entry
+version: "v0.9.7" # Version of the Catalog to be used
+category: Alstom # Category to be used for searching catalog entries
+maintainer: Emmanuel BATT # The maintainer of the catalog entry
+license: Alstom # The license
+projectURL: http://www.opendatum.net # A URL related to the catalog entry
