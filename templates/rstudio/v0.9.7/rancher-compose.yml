@@ -1,0 +1,21 @@
+version: '2'
+catalog:
+  name: "HealthHub Data Factory Project"
+  version: "v0.9.7"
+  description: "Data Project"
+  minimum_rancher_version: v0.51.0
+  questions:
+    - variable: user
+      label: "Rstudio Login"
+      required: true
+      default: "guest"
+      type: "string"
+    - variable: user_pass
+      label: "Rstudio Password"
+      required: true
+      type: "password"
+    - variable: domain
+      description: "DNS A Field for this host"
+      type: "certificate"
+      label: "DNS"
+      required: true

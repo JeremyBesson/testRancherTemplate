@@ -1,0 +1,21 @@
+version: '2'
+services:
+  studio:
+    image: hdf/rstudio:v0.9.7
+    volumes:
+      - home_sandbox_{{ .Stack.Name }}:/home
+      - etc_sandbox_{{ .Stack.Name }}:/etc_proj
+    mem_reservation: 1000000000
+    labels:
+      io.rancher_haproxy.exposed_port: 8787
+      io.rancher_haproxy.server_names:  dev-{{ .Stack.Name }}.${domain}
+    environment:
+    - MAIN_USER_LOGIN=${user}
+    - MAIN_USER_PASS=${user_pass}
+    command: 'bash -c "useradd -g users -m -N $$MAIN_USER_LOGIN && echo \"$$MAIN_USER_LOGIN:$$MAIN_USER_PASS\" | chpasswd && /init" '
+volumes:
+  home_sandbox:
+    driver: local
+  etc_sandbox:
+    driver: local
+    
